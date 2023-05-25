@@ -1,0 +1,26 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.style{
+  height:1000px;background-color:red;font-size:36px
+}
+
+.parallax {
+  /* The image used */
+  background:url(../src/assets/img5.jpg);
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
