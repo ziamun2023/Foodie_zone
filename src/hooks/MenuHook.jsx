@@ -6,14 +6,15 @@ const MenuHook =()=>{
     const [loading,setLoading]=useState(true)
     console.log(menu)
     useEffect(()=>{
-        fetch('menu.json')
+        fetch('http://localhost:5000/menu')
         .then(res=>res.json())
         .then(result=>{
+            
             setMenu(result)
             setLoading(false)
         })
     },[])
 
-    return [menu]
+    return [menu,loading]
 }
 export default  MenuHook

@@ -1,6 +1,7 @@
 import React from 'react';
 import Cover from '../shared/Cover';
 import MenuItem from '../shared/MenuItem';
+import { Link } from 'react-router-dom';
 
 const MenuByName = ({dessert,title, menuimage}) => {
     return (
@@ -14,6 +15,8 @@ const MenuByName = ({dessert,title, menuimage}) => {
     
 }
             </div>
+     <Link to={`/order`}>
+     <button>order</button></Link>
             
         </div>
     );

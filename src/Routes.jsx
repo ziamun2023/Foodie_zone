@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 
 import Menupage from "./pages/menutiem/Menupage";
 import Order from "./pages/orderFoods.jsx/Order";
+import Login from "./pages/login/Login";
 
 
 
@@ -20,7 +21,9 @@ import Order from "./pages/orderFoods.jsx/Order";
     {path:'/menus',
     element:<Menupage></Menupage>},
     {path:'/order',
-    element:<Order></Order>}
+    element:<Order></Order>},
+    {path:'/login',
+    element:<Login></Login>}
       ]
     },
   ]);

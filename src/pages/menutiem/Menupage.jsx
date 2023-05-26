@@ -14,7 +14,7 @@ import dessertImg from '../../assets/dessert-bg.jpeg'
 import HeadTitle from '../shared/HeadTitle';
 import MenuByName from './MenuByName';
 const Menupage = () => {
-const [menu]=MenuHook()
+const [menu,loading]=MenuHook()
 console.log(menu)
 const dessert=menu.filter(item=>item.category==='dessert')
 const soup=menu.filter(item=>item.category==='soup')
@@ -36,12 +36,17 @@ const offered=menu.filter(item=>item.category==='offered')
 <HeadTitle subheading={'dont miss todays offer'} heading={'Desserts'}></HeadTitle>
 
            
-<MenuByName dessert={dessert} title={'Favourite desserts'} menuimage={dessertImg} ></MenuByName>
-<MenuByName dessert={soup} title={'Favourite soup'} menuimage={menuimage} ></MenuByName>
-<MenuByName dessert={salad} title={'Favourite Salad'} menuimage={saladImg} ></MenuByName>
-<MenuByName dessert={pizza} title={'Favourite Pizza'} menuimage={pizzaimg} ></MenuByName>
-<MenuByName dessert={offered} title={'Best Offers'} menuimage={menuimage} ></MenuByName>
-   
+{
+    loading?<div className='grid  justify-items-center my-10'>
+         <progress className="progress w-56"></progress>
+    </div> :<>
+    <MenuByName dessert={dessert} title={' dessert'} menuimage={dessertImg} ></MenuByName>
+    <MenuByName dessert={soup} title={' soup'} menuimage={menuimage} ></MenuByName>
+    <MenuByName dessert={salad} title={' salad'} menuimage={saladImg} ></MenuByName>
+    <MenuByName dessert={pizza} title={' pizza'} menuimage={pizzaimg} ></MenuByName>
+    <MenuByName dessert={offered} title={' offered'} menuimage={menuimage} ></MenuByName></>
+}
+{/* <div className="radial-progress" style={{ "--value": "70", "--size": "12rem", "--thickness": "2rem" }}>70%</div> */}
       
         </div>
     );
